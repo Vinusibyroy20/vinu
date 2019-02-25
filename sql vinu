@@ -1,0 +1,38 @@
+1.	SELECT * FROM `bigquery-public-data.world_bank_intl_education.international_education`
+Where country code is “IND”
+Ans: 100
+2.	SELECT AVG(value) FROM `bigquery-public-data.world_bank_intl_education.international_education`
+Ans: 1.2278760882107992E10
+3.	SELECT country_name,max(value) FROM
+`bigquery-public-data.world_bank_intl_education.international_education`
+GROUP BY country_name
+Ans: Angola 1.86327014014154E11
+4.	SELECT *FROM   `bigquery-public-data.world_bank_intl_education.international_education`
+ORDER BY value desc
+Ans: 1.20603020118353E14 -5.57094529581264E13
+5.	SELECT *FROM  `bigquery-public-data.world_bank_intl_education.international_education`
+ORDER BY value asc
+Ans:
+China	CHN	Net flow of internationally mobile students (inbound - outbound), both sexes (number)	UIS.MENF.56	2013	-615748.0
+
+6.	SELECT AVG(value)FROM  `bigquery-public-data.world_bank_intl_education.international_education`
+GROUP BY country_name
+Ans: 9.680362826959362E8
+7.	SELECT country_name,min(value)FROM  `bigquery-public-data.world_bank_intl_education.international_education`
+GROUP BY country_name
+Ans:
+Angola (-5143.0)
+8.	SELECT count(distinct(country_name))FROM  `bigquery-public-data.world_bank_intl_education.international_education`
+GROUP BY country_name
+Ans: 100
+9.	SELECT `bigquery-public-data.world_bank_intl_debt.country_summary`.country_code,
+`bigquery-public-data.world_bank_intl_education.international_education`.value
+FROM `bigquery-public-data.world_bank_intl_debt.country_summary`
+LEFT JOIN `bigquery-public-data.world_bank_intl_education.international_education`
+ON `bigquery-public-data.world_bank_intl_debt.country_summary`.country_code =`bigquery-public-data.world_bank_intl_education.international_education`.country_code
+Ans:
+Row	country_code	value	
+1	UMC	1.830858E7	
+2	UMC	8.8051118850708	
+3	UMC	0.930000007152557	
+4	UMC	1.00758928E8	
